@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+.grilla{
+    display: grid;
+    grid-template-columns: 100vw;
+    grid-template-rows: repeat(4, 25vh);
+    grid-template-areas:
+        "header"
+        "seccion1"
+        "seccion2"
+        "footer"
+    ;
+    grid-row-gap: 2%;
+    justify-items: stretch;
+    align-items: stretch;
+    background-color: wheat;
+}
+
+.header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    background-color: wheat;
+    grid-area: header;
+    justify-items: center;
+    align-items: center;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+}
+
+.seccion1 {
+    display: grid;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: wheat;
+    grid-area: seccion1;
+
+}
+
+.seccion2 {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    justify-self: center;
+    align-items: center;
+    background-color: wheat;
+    grid-area: seccion2;
+
+}
+
+.item1{
+    justify-self: center;
+}
+
+.item2{
+    justify-self: flex-end;
+}
+
+.item3{
+    justify-self: start;
+}
+
+.item4{
+    justify-self: center;
+}
+
+.footer {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    justify-content: right;
+    align-items: center;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    background-color: wheat;
+    grid-area: footer;
+
+}
+
+.ROTATE{
+    height: 250px;
+    width: 250px;
+    transform: rotateX(45deg);
+}
+
+.skew{
+    height: 250px;
+    width: 250px;
+    transform: skew(-50deg) translate(200px, -150px);
+}
+
+@media (max-width: 768px){
+    .grilla{
+        background-color: wheat;
+        
+    }
+    .seccion2{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        grid-row-gap: 10px;
+    }
+}
+
+@media (max-width: 575px){
+    .header{
+        display: flex;
+        flex-direction: column;
+    }
+}
